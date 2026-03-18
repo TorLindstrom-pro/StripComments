@@ -30,5 +30,15 @@ public class StripCommentsSolutionTest
 		// Assert
 		Assert.Equal(inputString, result);
 	}
+
+	[Fact(DisplayName = "Return empty text given only comment")]
+	public async Task OnlyComment_ReturnsEmptyText()
+	{
+		// Act
+		var result = StripCommentsSolution.StripComments("#", new[] { "#" });
+
+		// Assert
+		Assert.Equal("", result);
+	}
 	
 }
