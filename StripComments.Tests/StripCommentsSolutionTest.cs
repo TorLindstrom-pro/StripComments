@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
-using ClassLibrary1;
 using JetBrains.Annotations;
+using StripComment;
 using Xunit;
 
-namespace ClassLibrary1.Tests;
+namespace StripComments.Tests;
 
 [TestSubject(typeof(StripCommentsSolution))]
 public class StripCommentsSolutionTest
