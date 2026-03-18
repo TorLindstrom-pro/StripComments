@@ -17,4 +17,18 @@ public class StripCommentsSolutionTest
 		// Assert
 		Assert.Equal("", result);
 	}
+	
+	[Fact(DisplayName = "Return input text given no comment symbols")]
+	public async Task NoCommentSymbols_ReturnsInputText()
+	{
+		// Arrange
+		const string inputString = "abc def g";
+		
+		// Act
+		var result = StripCommentsSolution.StripComments(inputString, new[] { "" });
+
+		// Assert
+		Assert.Equal(inputString, result);
+	}
+	
 }
