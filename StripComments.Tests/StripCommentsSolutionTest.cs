@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using StripComment;
 using Xunit;
 
@@ -9,46 +8,45 @@ namespace StripComments.Tests;
 public class StripCommentsSolutionTest
 {
 	[Fact(DisplayName = "Empty text returns empty text")]
-	public async Task EmptyText_ReturnsEmptyText()
+	public void EmptyText_ReturnsEmptyText()
 	{
 		// Act
-		var result = StripCommentsSolution.StripComments("", new[] { "" });
+		var result = StripCommentsSolution.StripComments("", [""]);
 
 		// Assert
 		Assert.Equal("", result);
 	}
-	
+
 	[Fact(DisplayName = "Return input text given no comment symbols")]
-	public async Task NoCommentSymbols_ReturnsInputText()
+	public void NoCommentSymbols_ReturnsInputText()
 	{
 		// Arrange
 		const string inputString = "abc def g";
-		
+
 		// Act
-		var result = StripCommentsSolution.StripComments(inputString, new[] { "" });
+		var result = StripCommentsSolution.StripComments(inputString, [""]);
 
 		// Assert
 		Assert.Equal(inputString, result);
 	}
 
 	[Fact(DisplayName = "Return empty text given only comment")]
-	public async Task OnlyComment_ReturnsEmptyText()
+	public void OnlyComment_ReturnsEmptyText()
 	{
 		// Act
-		var result = StripCommentsSolution.StripComments("#", new[] { "#" });
+		var result = StripCommentsSolution.StripComments("#", ["#"]);
 
 		// Assert
 		Assert.Equal("", result);
 	}
 
 	[Fact(DisplayName = "Return empty text if input starts with comment symbol")]
-	public async Task InputStartsWithComment_ReturnsEmptyText()
+	public void InputStartsWithComment_ReturnsEmptyText()
 	{
 		// Act
-		var result = StripCommentsSolution.StripComments("# abc", new[] { "#" });
+		var result = StripCommentsSolution.StripComments("# abc", ["#"]);
 
 		// Assert
 		Assert.Equal("", result);
 	}
-	
 }
