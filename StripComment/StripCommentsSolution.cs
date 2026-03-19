@@ -10,9 +10,10 @@ public class StripCommentsSolution
 			.Split("\n")
 			.Select(row =>
 				row.Split(commentSymbols
-					.OrderBy(row.IndexOf)
-					.FirstOrDefault(row.Contains)
-				)[0]);
+						.OrderBy(row.IndexOf)
+						.FirstOrDefault(row.Contains)
+					)[0]
+					.TrimEnd());
 
 		return string.Join("\r\n", cleanedRows);
 	}

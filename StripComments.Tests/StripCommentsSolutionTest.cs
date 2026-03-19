@@ -50,6 +50,16 @@ public class StripCommentsSolutionTest
 		Assert.Equal("", result);
 	}
 
+	[Fact(DisplayName = "Remove trailing whitespace")]
+	public void InputWithTrailingWhiteSpace_ReturnsTrimmedText()
+	{
+		// Act
+		var result = StripCommentsSolution.StripComments("abc ", []);
+
+		// Assert
+		Assert.Equal("abc", result);
+	}
+
 	[Fact(DisplayName = "Remove text from comment symbol")]
 	public void InputWithComment_ReturnsTextUpUntilCommentSymbol()
 	{
@@ -57,7 +67,7 @@ public class StripCommentsSolutionTest
 		var result = StripCommentsSolution.StripComments("abc #", ["#"]);
 
 		// Assert
-		Assert.Equal("abc ", result);
+		Assert.Equal("abc", result);
 	}
 
 	[Fact(DisplayName = "Remove text from earliest comment symbol")]
@@ -67,7 +77,7 @@ public class StripCommentsSolutionTest
 		var result = StripCommentsSolution.StripComments("abc #def |ghi", ["|","#"]);
 
 		// Assert
-		Assert.Equal("abc ", result);
+		Assert.Equal("abc", result);
 	}
 
 	[Fact(DisplayName = "Remove text after comment symbol on each textrow")]

@@ -14,7 +14,8 @@ Done:
 - [ ] multple comments on same line
   - "abc #def |ghi" -> "abc " 
 - [x] multiple comment symbols
-  - "abc # abc\nabc | abc" -> "abc \nabc" 
+  - "abc # abc\nabc | abc" -> "abc \nabc"
+- [ ] strip trailing whitespace
   
 ---
 Todo:
