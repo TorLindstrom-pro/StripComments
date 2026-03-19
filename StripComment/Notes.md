@@ -5,13 +5,12 @@ Done:
 - [x] only comment returns an empty string
 - [x] remove all if string begins with comment
   - "# abc" -> ""
+- [x] remove comment at end of string
+  - "abc #" -> "abc "
+- [x] remove all after comment
+  - "abc # abc" -> "abc "
 
 ---
 Todo:
-
-- [ ] remove comment at end of string
-  - "abc #" -> "abc "
-- [ ] remove all after comment
-  - "abc # abc" -> "abc "
 - [ ] multiline input
   - "abc # abc\nabc" -> "abc \nabc"

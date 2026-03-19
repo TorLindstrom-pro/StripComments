@@ -49,4 +49,14 @@ public class StripCommentsSolutionTest
 		// Assert
 		Assert.Equal("", result);
 	}
+
+	[Fact(DisplayName = "Remove text after comment symbol")]
+	public void InputWithComment_ReturnsTextUpUntilCommentSymbol()
+	{
+		// Act
+		var result = StripCommentsSolution.StripComments("abc #", ["#"]);
+
+		// Assert
+		Assert.Equal("abc ", result);
+	}
 }
