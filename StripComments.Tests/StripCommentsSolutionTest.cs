@@ -59,4 +59,23 @@ public class StripCommentsSolutionTest
 		// Assert
 		Assert.Equal("abc ", result);
 	}
+
+	[Fact(DisplayName = "Remove text after comment symbol on each textrow")]
+	public void MulitlineInputWithComment_ReturnsTextUpUntilCommentSymbol()
+	{
+		// Act
+		var result = StripCommentsSolution.StripComments(
+			"""
+			abc#def
+			abc
+			""", 
+			["#"]);
+
+		// Assert
+		Assert.Equal(
+			"""
+			abc
+			abc
+			""", result);
+	}
 }

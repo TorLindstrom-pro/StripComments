@@ -9,10 +9,10 @@ Done:
   - "abc #" -> "abc "
 - [x] remove all after comment
   - "abc # abc" -> "abc "
+- [x] multiline input
+  - "abc # abc\nabc" -> "abc \nabc"
 
 ---
 Todo:
 - [ ] multiple comment symbols
   - "abc # abc\nabc | abc" -> "abc \nabc" 
-- [ ] multiline input
-  - "abc # abc\nabc" -> "abc \nabc"

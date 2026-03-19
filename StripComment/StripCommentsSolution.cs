@@ -6,6 +6,8 @@ public class StripCommentsSolution
 	{
 		var commentSymbol = commentSymbols.First();
 
-		return text.Split(commentSymbol)[0];
+		var inputRows = text.Split("\n");
+
+		return string.Join("\r\n", inputRows.Select(row => row.Split(commentSymbol)[0]));
 	}
 }
