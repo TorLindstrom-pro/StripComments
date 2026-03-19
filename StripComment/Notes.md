@@ -12,5 +12,7 @@ Done:
 
 ---
 Todo:
+- [ ] multiple comment symbols
+  - "abc # abc\nabc | abc" -> "abc \nabc" 
 - [ ] multiline input
   - "abc # abc\nabc" -> "abc \nabc"
