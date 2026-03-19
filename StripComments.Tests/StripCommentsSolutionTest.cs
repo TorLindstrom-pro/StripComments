@@ -50,11 +50,21 @@ public class StripCommentsSolutionTest
 		Assert.Equal("", result);
 	}
 
-	[Fact(DisplayName = "Remove text after comment symbol")]
+	[Fact(DisplayName = "Remove text from comment symbol")]
 	public void InputWithComment_ReturnsTextUpUntilCommentSymbol()
 	{
 		// Act
 		var result = StripCommentsSolution.StripComments("abc #", ["#"]);
+
+		// Assert
+		Assert.Equal("abc ", result);
+	}
+
+	[Fact(DisplayName = "Remove text from earliest comment symbol")]
+	public void InputWithComment_ReturnsTextUpUntilEarliestCommentSymbol()
+	{
+		// Act
+		var result = StripCommentsSolution.StripComments("abc #def |ghi", ["|","#"]);
 
 		// Assert
 		Assert.Equal("abc ", result);
@@ -70,6 +80,25 @@ public class StripCommentsSolutionTest
 			abc
 			""", 
 			["#"]);
+
+		// Assert
+		Assert.Equal(
+			"""
+			abc
+			abc
+			""", result);
+	}
+
+	[Fact(DisplayName = "Remove text after any comment symbol on each textrow")]
+	public void MulitlineInputWithComment_ReturnsTextUpUntilDifferentCommentSymbol()
+	{
+		// Act
+		var result = StripCommentsSolution.StripComments(
+			"""
+			abc#def
+			abc!def
+			""", 
+			["#", "!"]);
 
 		// Assert
 		Assert.Equal(

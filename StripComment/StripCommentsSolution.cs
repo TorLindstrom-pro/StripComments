@@ -4,10 +4,18 @@ public class StripCommentsSolution
 {
 	public static string StripComments(string text, string[] commentSymbols)
 	{
-		var commentSymbol = commentSymbols.First();
-
 		var inputRows = text.Split("\n");
 
-		return string.Join("\r\n", inputRows.Select(row => row.Split(commentSymbol)[0]));
+		var cleanedRows = inputRows.Select(row =>
+		{
+			var firstCommentSymbol = commentSymbols
+				.Where(row.Contains)
+				.OrderBy(symbol => row.IndexOf(symbol))
+				.FirstOrDefault();
+
+			return row.Split(firstCommentSymbol)[0];
+		});
+
+		return string.Join("\r\n", cleanedRows);
 	}
 }

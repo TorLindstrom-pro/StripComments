@@ -11,8 +11,10 @@ Done:
   - "abc # abc" -> "abc "
 - [x] multiline input
   - "abc # abc\nabc" -> "abc \nabc"
-
+- [ ] multple comments on same line
+  - "abc #def |ghi" -> "abc " 
+- [x] multiple comment symbols
+  - "abc # abc\nabc | abc" -> "abc \nabc" 
+  
 ---
 Todo:
-- [ ] multiple comment symbols
-  - "abc # abc\nabc | abc" -> "abc \nabc" 
