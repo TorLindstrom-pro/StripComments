@@ -4,6 +4,8 @@ public class StripCommentsSolution
 {
 	public static string StripComments(string text, string[] commentSymbols)
 	{
-		return commentSymbols.First() == text ? "" : text;
+		if (string.IsNullOrWhiteSpace(commentSymbols.First())) return text;
+
+		return text.Contains(commentSymbols.First()) ? "" : text;
 	}
 }

@@ -40,5 +40,15 @@ public class StripCommentsSolutionTest
 		// Assert
 		Assert.Equal("", result);
 	}
+
+	[Fact(DisplayName = "Return empty text if input starts with comment symbol")]
+	public async Task InputStartsWithComment_ReturnsEmptyText()
+	{
+		// Act
+		var result = StripCommentsSolution.StripComments("# abc", new[] { "#" });
+
+		// Assert
+		Assert.Equal("", result);
+	}
 	
 }
