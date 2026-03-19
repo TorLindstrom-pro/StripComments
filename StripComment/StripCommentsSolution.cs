@@ -1,4 +1,6 @@
-﻿namespace StripComment;
+﻿using System.Linq;
+
+namespace StripComment;
 
 public class StripCommentsSolution
 {
